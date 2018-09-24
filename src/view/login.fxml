@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControleLogin">
+   <children>
+      <ImageView fitHeight="415.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/lider3.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="entrar" defaultButton="true" layoutX="380.0" layoutY="253.0" onAction="#acao" prefHeight="33.0" prefWidth="192.0" text="Entrar" textOverrun="CLIP">
+         <effect>
+            <Glow />
+         </effect></JFXButton>
+      <JFXTextField fx:id="usuario" labelFloat="true" layoutX="380.0" layoutY="99.0" onKeyPressed="#limparAdvertencia" prefHeight="25.0" prefWidth="192.0" promptText="Usuario" />
+      <JFXPasswordField fx:id="senha" labelFloat="true" layoutX="380.0" layoutY="160.0" prefHeight="25.0" prefWidth="192.0" promptText="Senha" />
+      <JFXButton fx:id="fechar" layoutX="554.0" layoutY="14.0" onAction="#fecharTelaAction" ripplerFill="#360e0e" text="X" textAlignment="CENTER" textFill="#346bc9" textOverrun="CLIP">
+         <font>
+            <Font size="16.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </JFXButton>
+      <Text fx:id="actiontarget" fill="RED" layoutX="438.0" layoutY="331.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+   </children>
+</AnchorPane>
