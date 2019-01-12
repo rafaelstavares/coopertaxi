@@ -27,7 +27,7 @@ public class teste {
             Session session = sessFact.getCurrentSession();
             us.setNome("rafa2");
             us.setSenha("admin");
-            us.setUsuario("ggg");
+            us.setUsuario("rst");
             session.beginTransaction();
             session.save(us);
             session.getTransaction().commit();
