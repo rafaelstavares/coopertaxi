@@ -17,5 +17,12 @@
         <property name="current_session_context_class">thread</property>
         <!-- Livro -->
         <mapping class="modelo.Usuario" />
+        <mapping class="modelo.Carro" />
+        <mapping class="modelo.CarroOficina" />
+        <mapping class="modelo.Cooperado" />
+        <mapping class="modelo.Cota" />
+        <mapping class="modelo.Doente" />
+        <mapping class="modelo.Pagamento" />
+        
     </session-factory>
 </hibernate-configuration>

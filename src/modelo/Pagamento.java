@@ -5,10 +5,23 @@
  */
 package modelo;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 /**
  *
  * @author PC-ASUS
  */
+@Entity
+@Table(name = "pagamento")
 public class Pagamento {
+    @Id
+    @Column(name = "idPagamento")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    Integer idPagamento;
     
 }
