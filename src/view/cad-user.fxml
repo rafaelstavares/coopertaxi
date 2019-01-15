@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControlCadUser">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <JFXTextField fx:id="nome" layoutX="196.0" layoutY="77.0" promptText="Usuario">
+               <padding>
+                  <Insets bottom="10.0" />
+               </padding>
+            </JFXTextField>
+            <JFXTextField fx:id="usuario" layoutX="196.0" layoutY="138.0" promptText="Nome" />
+            <JFXPasswordField fx:id="senha" layoutX="196.0" layoutY="199.0" promptText="Senha">
+               <padding>
+                  <Insets bottom="10.0" top="10.0" />
+               </padding>
+            </JFXPasswordField>
+            <JFXButton fx:id="enviarBtn" buttonType="RAISED" layoutX="196.0" layoutY="274.0" onAction="#cadUser" prefHeight="25.0" prefWidth="135.0" ripplerFill="#67f265" style="-fx-background-color: blue;" text="Cadastrar" textFill="WHITE" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>

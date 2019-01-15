@@ -5,6 +5,7 @@
  */
 package img;
 
+import dao.UsuarioDao;
 import modelo.Usuario;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -19,6 +20,7 @@ public class teste {
 
     public static void main(String[] args) {
 
+        /*
         SessionFactory sessFact = HibernateUtil.getSessionFactory();
 
        
@@ -34,6 +36,19 @@ public class teste {
         } catch (Exception e) {
             System.out.println("errro " + e);
         }
+         */
+          Usuario user = new Usuario();
+        try {
+          
+            UsuarioDao u = new UsuarioDao();
+            user = u.buscarPorLogin("cooperativa");
 
+        } catch (Exception e) {
+            System.out.println(""+e);
+        }
+            System.out.println("nome " + user.getSenha());
+  
+     
+  
     }
 }
