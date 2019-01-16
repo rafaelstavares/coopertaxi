@@ -6,6 +6,7 @@
 package controle;
 
 import coopertaxi.PUsuario;
+import coopertaxi.TabelaUser;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -36,6 +37,14 @@ public class ControlPrincipal implements Initializable {
     void cadusuario(ActionEvent event) {
         try {
             new PUsuario().start(new Stage());
+        } catch (Exception e) {
+            System.out.println(""+e);
+        }
+    }
+    @FXML
+    void viewUsuario(ActionEvent event) {
+        try {
+            new TabelaUser().start(new Stage());
         } catch (Exception e) {
             System.out.println(""+e);
         }

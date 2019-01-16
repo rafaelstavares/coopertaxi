@@ -5,6 +5,9 @@
  */
 package dao;
 
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import modelo.Usuario;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -75,12 +78,45 @@ public class UsuarioDao {
     public Usuario buscarPorLogin(String usuario) {
         Session sessao = sessFact.getCurrentSession();
         Transaction trasacao = null;
-        trasacao = sessao.beginTransaction();
-        String hql = "select u from Usuario u where u.usuario = :usuario";
+        Usuario user = null;
+        try {
+            trasacao = sessao.beginTransaction();
+            String hql = "select u from Usuario u where u.usuario = :usuario";
+            Query consulta = sessao.createQuery(hql);
+            consulta.setString("usuario", usuario);
+            user = (Usuario) consulta.uniqueResult();
+        } catch (Exception e) {
+            if (trasacao != null) {
+                trasacao.rollback();
+            }
+        } finally {
+            sessao.close();
+        }
 
-        Query consulta = sessao.createQuery(hql);
-        consulta.setString("usuario", usuario);
-        return (Usuario) consulta.uniqueResult();
+        return user;
+    }
+
+    public ObservableList <Usuario> ListarUser() {
+        Session sessao = sessFact.getCurrentSession();
+        Transaction trasacao = null;
+        ObservableList <Usuario> list = FXCollections.observableArrayList();;
+        try {
+             trasacao = sessao.beginTransaction();
+            List<Usuario> eList = sessao.createCriteria(Usuario.class).list();
+             for (Usuario ent : eList) {
+            list.add(ent);
+        }
+        } catch (Exception e) {
+             if (trasacao != null) {
+                trasacao.rollback();
+            }
+        }
+         finally {
+            sessao.close();
+        }
+        
+
+        return list;
     }
 
 }

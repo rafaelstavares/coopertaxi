@@ -32,7 +32,6 @@ public class ControleLogin implements Initializable {
             java.util.ResourceBundle resources) {
 
     }
-   
 
     @FXML
     JFXTextField usuario;
@@ -52,27 +51,23 @@ public class ControleLogin implements Initializable {
     @FXML
     public void acao(ActionEvent event) {
         Stage stage = (Stage) entrar.getScene().getWindow();
+        UsuarioDao user = new UsuarioDao();
         try {
-            UsuarioDao user = new UsuarioDao();
-        if (user.buscarPorLogin(usuario.getText())!=null
-                || senha.getText().equals(user.buscarPorLogin(usuario.getText()).getSenha())) {
-            try {
+
+            if (user.buscarPorLogin(usuario.getText()) != null && senha.getText().equals(user.buscarPorLogin(usuario.getText()).getSenha())) {
                 new Principal().start(new Stage());
                 stage.close();
-            } catch (Exception e) {
+            } else {
+                actiontarget.setText("credencias erradas");
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setContentText("erro de credenciais!");
+                alert.show();
+                limparLogin();
             }
-
-        } else {
-            actiontarget.setText("credencias erradas");
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setContentText("erro de credenciais!");
-            alert.show();
-            limparLogin();
-        } 
         } catch (Exception e) {
-            System.out.println("in"+e);
+            System.out.println("in" + e);
         }
-        
+
     }
 
     public void limparLogin() {
