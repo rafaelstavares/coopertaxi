@@ -5,9 +5,11 @@
  */
 package controle;
 
+import com.jfoenix.controls.JFXButton;
 import dao.UsuarioDao;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -34,13 +36,39 @@ public class ViewUsuarioController implements Initializable {
     private TableColumn usuarioCol;
     @FXML
     private TableColumn senhaCol;
+    @FXML
+    private JFXButton deleteBtn;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        nomeCol.setCellValueFactory(new PropertyValueFactory<Usuario, String>("nome"));
-        usuarioCol.setCellValueFactory(new PropertyValueFactory<Usuario, String>("usuario"));
-                senhaCol.setCellValueFactory(new PropertyValueFactory<Usuario, String>("senha"));
-                tabelaUser.setItems(user.ListarUser());
+        configurarColunas();
+        atualizarTabela();
+        deleteBtn.toFront();
     }
 
+    @FXML
+    public void deletar(ActionEvent event) {
+        Usuario oi;
+        try {
+            oi = user.carregarId(tabelaUser.getSelectionModel().getSelectedItem().getIdUsuario());
+            user.deletar(oi);
+            atualizarTabela();
+        } catch (Exception e) {
+        }
+
+    }
+
+    void configurarColunas() {
+        nomeCol.setCellValueFactory(new PropertyValueFactory<Usuario, String>("nome"));
+        usuarioCol.setCellValueFactory(new PropertyValueFactory<Usuario, String>("usuario"));
+        senhaCol.setCellValueFactory(new PropertyValueFactory<Usuario, String>("senha"));
+        tabelaUser.setItems(user.ListarUser());
+
+    }
+
+    void atualizarTabela() {
+        tabelaUser.getItems().clear();
+        tabelaUser.setItems(user.ListarUser());
+        tabelaUser.refresh();
+    }
 }
