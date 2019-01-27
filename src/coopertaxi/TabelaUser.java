@@ -27,7 +27,7 @@ public class TabelaUser extends Application{
         Scene oi = new Scene(root);
 
         primaryStage.setScene(oi);
-        primaryStage.setTitle("cadatro usuario");
+        primaryStage.setTitle("Cadastro usuario");
         primaryStage.setAlwaysOnTop(true);
         primaryStage.show();
         
