@@ -11,6 +11,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -27,6 +28,7 @@ public class PUsuario extends Application{
         Scene oi = new Scene(root);
 
         primaryStage.setScene(oi);
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.setTitle("cadatro usuario");
         primaryStage.setAlwaysOnTop(true);
         primaryStage.show();

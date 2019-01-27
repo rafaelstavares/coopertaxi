@@ -44,6 +44,7 @@ public class ControlPrincipal implements Initializable {
     void cadusuario(ActionEvent event) {
         try {
             new PUsuario().start(new Stage());
+            
         } catch (Exception e) {
             System.out.println("" + e);
         }
