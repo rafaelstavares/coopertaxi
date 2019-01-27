@@ -12,26 +12,57 @@
   <children>
       <MenuBar>
         <menus>
-          <Menu mnemonicParsing="false" text="File">
+          <Menu mnemonicParsing="false" text="_File">
             <items>
                   <MenuItem mnemonicParsing="false" text="Abrir" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-              <MenuItem mnemonicParsing="false" onAction="#sairSistema" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Cadastro">
-            <items>
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="Usuário">
+                  <Menu mnemonicParsing="false" text="_Usuário">
                     <items>
                       <MenuItem fx:id="idCadUser" mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
                         <MenuItem fx:id="idViewUsuario" mnemonicParsing="false" onAction="#viewUsuario" text="Listar" />
                     </items>
                   </Menu>
-              <MenuItem mnemonicParsing="false" text="Outros" />
+              <MenuItem mnemonicParsing="false" onAction="#sairSistema" text="Close" />
             </items>
           </Menu>
-          <Menu mnemonicParsing="false" text="Help">
+            <Menu mnemonicParsing="false" text="_Cota">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" text="Listar" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="_Carro Oficina">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                        <MenuItem mnemonicParsing="false" text="Listar" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="_Doente">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                        <MenuItem mnemonicParsing="false" text="Listar" />
+                     </items>
+                  </Menu>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="_Carro">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" text="Listar" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="_Cadastro">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Abrir" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Outros" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="_Cooperado">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" text="Listar" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="_Help">
             <items>
               <MenuItem mnemonicParsing="false" text="About" />
             </items>
