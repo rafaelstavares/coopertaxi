@@ -9,6 +9,7 @@ import com.jfoenix.controls.JFXButton;
 import dao.UsuarioDao;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -50,9 +51,14 @@ public class ViewUsuarioController implements Initializable {
     public void deletar(ActionEvent event) {
         Usuario oi;
         try {
+            
+            ObservableList<Usuario> usuarioSelecionado, allUsuario;
+            allUsuario = tabelaUser.getItems();
             oi = user.carregarId(tabelaUser.getSelectionModel().getSelectedItem().getIdUsuario());
+            usuarioSelecionado = tabelaUser.getSelectionModel().getSelectedItems();
+            usuarioSelecionado.forEach(allUsuario::remove);
+            
             user.deletar(oi);
-            atualizarTabela();
         } catch (Exception e) {
         }
 
