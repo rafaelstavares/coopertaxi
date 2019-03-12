@@ -37,6 +37,7 @@ public class ViewUsuarioController implements Initializable {
     private TableColumn usuarioCol;
     @FXML
     private TableColumn senhaCol;
+    
     @FXML
     private JFXButton deleteBtn;
 
