@@ -22,8 +22,6 @@ import javafx.stage.Stage;
  */
 public class ControlPrincipal implements Initializable {
 
-    @FXML
-    Label ola;
 
     @FXML
     MenuItem fechar;
@@ -34,7 +32,6 @@ public class ControlPrincipal implements Initializable {
     @Override
     public void initialize(java.net.URL location,
             java.util.ResourceBundle resources) {
-        ola.setText("ola");
         idCadUser.setAccelerator(
                 KeyCombination.keyCombination("SHORTCUT+U")
         );
