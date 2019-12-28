@@ -7,8 +7,10 @@ package controle;
 
 import coopertaxi.PUsuario;
 import coopertaxi.TabelaUser;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -24,25 +26,34 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import modelo.Usuario;
 
 /**
  *
  * @author PC-ASUS
  */
 public class ControlPrincipal implements Initializable {
-
+    
+    UserSession usuario12;
+    
     @FXML
     MenuItem fechar;
-
+    
     @FXML
     MenuItem idCadUser;
     
     @FXML
     Label lHora;
-
+    
+    @FXML
+    Label lData;
+    
+    @FXML
+    Label lOperador;
+    
     @FXML
     BorderPane panel1;
-
+    
     @Override
     public void initialize(java.net.URL location,
             java.util.ResourceBundle resources) {
@@ -50,19 +61,21 @@ public class ControlPrincipal implements Initializable {
                 KeyCombination.keyCombination("SHORTCUT+U")
         );
         bindToTime();
-
+        labelData();
+        Usuario user13 =  UserSession.getInstace().getUser();
+        lOperador.setText(user13.getNome());
     }
-
+    
     @FXML
     void cadusuario(ActionEvent event) {
         try {
             new PUsuario().start(new Stage());
-
+            
         } catch (Exception e) {
             System.out.println("" + e);
         }
     }
-
+    
     private void bindToTime() {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(0),
@@ -80,7 +93,26 @@ public class ControlPrincipal implements Initializable {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
-
+    
+    private void labelData() {
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(0),
+                        new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent actionEvent) {
+                        Calendar time1 = Calendar.getInstance();
+                        Date data = time1.getTime();
+                        DateFormat f = DateFormat.getDateInstance(DateFormat.FULL);
+                        lData.setText(f.format(data));
+                    }
+                }
+                ),
+                new KeyFrame(Duration.seconds(1))
+        );
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
+    }
+    
     @FXML
     void viewUsuario(ActionEvent event) {
         try {
@@ -89,10 +121,15 @@ public class ControlPrincipal implements Initializable {
             System.out.println("" + e);
         }
     }
-
+    
+    @FXML
+    void viewNomeUsuario() {
+        lOperador.setText(usuario12.getUserName());
+    }
+    
     @FXML
     private void sairSistema() {
         Platform.exit();
     }
-
+    
 }

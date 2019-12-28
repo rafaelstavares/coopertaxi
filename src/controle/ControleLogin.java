@@ -20,6 +20,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import modelo.Usuario;
 
 /**
  *
@@ -32,6 +33,8 @@ public class ControleLogin implements Initializable {
             java.util.ResourceBundle resources) {
 
     }
+    
+
 
     @FXML
     JFXTextField usuario;
@@ -52,9 +55,12 @@ public class ControleLogin implements Initializable {
     public void acao(ActionEvent event) {
         Stage stage = (Stage) entrar.getScene().getWindow();
         UsuarioDao user = new UsuarioDao();
+
         try {
 
             if (user.buscarPorLogin(usuario.getText()) != null && senha.getText().equals(user.buscarPorLogin(usuario.getText()).getSenha())) {
+                UserSession.getInstace().setUser(new Usuario(usuario.getText()));
+
                 new Principal().start(new Stage());
                 stage.close();
             } else {

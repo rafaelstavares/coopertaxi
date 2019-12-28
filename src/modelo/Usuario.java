@@ -32,6 +32,10 @@ public class Usuario implements Serializable {
 
     public Usuario() {
     }
+    
+      public Usuario(String nome) {
+          this.nome = nome;
+    }
 
     public Integer getIdUsuario() {
         return idUsuario;
