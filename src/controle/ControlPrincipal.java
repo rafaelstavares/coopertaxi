@@ -31,27 +31,26 @@ import javafx.util.Duration;
  */
 public class ControlPrincipal implements Initializable {
 
-/*    @FXML
+    @FXML
     MenuItem fechar;
 
     @FXML
     MenuItem idCadUser;
-*/
+    
     @FXML
     Label lHora;
-    
+
     @FXML
     BorderPane panel1;
 
     @Override
     public void initialize(java.net.URL location,
             java.util.ResourceBundle resources) {
-        /*idCadUser.setAccelerator(
+        idCadUser.setAccelerator(
                 KeyCombination.keyCombination("SHORTCUT+U")
-        );*/
+        );
         bindToTime();
-       
- 
+
     }
 
     @FXML
