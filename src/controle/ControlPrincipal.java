@@ -20,6 +20,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -37,6 +39,9 @@ public class ControlPrincipal implements Initializable {
 */
     @FXML
     Label lHora;
+    
+    @FXML
+    BorderPane panel1;
 
     @Override
     public void initialize(java.net.URL location,
@@ -45,6 +50,7 @@ public class ControlPrincipal implements Initializable {
                 KeyCombination.keyCombination("SHORTCUT+U")
         );*/
         bindToTime();
+       
  
     }
 
