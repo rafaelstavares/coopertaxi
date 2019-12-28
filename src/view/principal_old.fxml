@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="900.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControlPrincipal">
+  <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="_File">
+            <items>
+                  <MenuItem mnemonicParsing="false" text="Abrir" />
+                  <Menu mnemonicParsing="false" text="_Usuário">
+                    <items>
+                      <MenuItem fx:id="idCadUser" mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                        <MenuItem fx:id="idViewUsuario" mnemonicParsing="false" onAction="#viewUsuario" text="Listar" />
+                    </items>
+                  </Menu>
+              <MenuItem mnemonicParsing="false" onAction="#sairSistema" text="Close" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="_Cota">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" text="Listar" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <Menu mnemonicParsing="false" text="_Carro Oficina">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                        <MenuItem mnemonicParsing="false" text="Listar" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="_Doente">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                        <MenuItem mnemonicParsing="false" text="Listar" />
+                     </items>
+                  </Menu>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="_Carro">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" text="Listar" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="_Cadastro">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Abrir" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Outros" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="_Cooperado">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
+                  <MenuItem mnemonicParsing="false" text="Listar" />
+               </items>
+            </Menu>
+          <Menu mnemonicParsing="false" text="_Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox prefHeight="700.0" prefWidth="1100.0">
+         <children>
+            <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label alignment="CENTER" layoutX="37.0" layoutY="14.0" prefHeight="46.0" prefWidth="169.0" text="Cotas Pagas">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink alignment="CENTER" layoutX="81.0" layoutY="60.0" prefHeight="46.0" prefWidth="81.0" text="34" textFill="#37e119">
+                     <font>
+                        <Font name="System Bold" size="38.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label alignment="CENTER" layoutX="37.0" layoutY="131.0" prefHeight="46.0" prefWidth="169.0" text="Falta Pagar">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink alignment="CENTER" layoutX="81.0" layoutY="177.0" prefHeight="46.0" prefWidth="81.0" text="32" textFill="#dd1c1c">
+                     <font>
+                        <Font name="System Bold" size="38.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label alignment="CENTER" layoutX="37.0" layoutY="248.0" prefHeight="46.0" prefWidth="169.0" text="Carro Oficina">
+                     <font>
+                        <Font name="System Bold" size="25.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink alignment="CENTER" layoutX="81.0" layoutY="294.0" prefHeight="46.0" prefWidth="81.0" text="4" textFill="#3529e1">
+                     <font>
+                        <Font name="System Bold" size="38.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label alignment="CENTER" layoutX="28.0" layoutY="365.0" prefHeight="46.0" prefWidth="169.0" text="Doente">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink alignment="CENTER" layoutX="81.0" layoutY="411.0" prefHeight="46.0" prefWidth="81.0" text="3" textFill="#55e8ff">
+                     <font>
+                        <Font name="System Bold" size="38.0" />
+                     </font>
+                  </Hyperlink>
+                  <Label alignment="CENTER" layoutX="37.0" layoutY="482.0" prefHeight="46.0" prefWidth="169.0" text="Valor Cota">
+                     <font>
+                        <Font name="System Bold" size="28.0" />
+                     </font>
+                  </Label>
+                  <Hyperlink alignment="CENTER" layoutX="37.0" layoutY="528.0" prefHeight="65.0" prefWidth="169.0" text="R$ 27,00" textFill="#37e119">
+                     <font>
+                        <Font name="System Bold" size="35.0" />
+                     </font>
+                  </Hyperlink>
+               </children></AnchorPane>
+            <TilePane alignment="TOP_CENTER" hgap="8.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="344.0" prefWidth="800.0" vgap="15.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #3f51b5;" text="CARRO 10" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4db6ac;" text="CARRO 09">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4dd0e1;" text="CARRO 08">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4fc3f7;" text="CARRO 07" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #d4e157;" text="CARRO 06">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffa726;" text="CARRO 05">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4dd0e1;" text="CARRO 04">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffee58;" text="CARRO 03">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #2196f3;" text="CARRO 02" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #3f51b5;" text="CARRO 01" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #673ab7;" text="CARRO 20" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffa726;" text="CARRO 19">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #2196f3;" text="CARRO 18" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffee58;" text="CARRO 17">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #66bb6a;" text="CARRO 16">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4fc3f7;" text="CARRO 15" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #d4e157;" text="CARRO 14">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #66bb6a;" text="CARRO 13">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #2196f3;" text="CARRO 12" textFill="WHITE">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #673ab7;" text="CARRO 11" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffee58;" text="CARRO 30">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #3f51b5;" text="CARRO 29" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #673ab7;" text="CARRO 28" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4db6ac;" text="CARRO 27">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4dd0e1;" text="CARRO 26">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4fc3f7;" text="CARRO 25" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #3f51b5;" text="CARRO 24" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4db6ac;" text="CARRO 23">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #673ab7;" text="CARRO 22" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4db6ac;" text="CARRO 21">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #673ab7;" text="CARRO 40" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffee58;" text="CARRO 39">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #d4e157;" text="CARRO 38">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffee58;" text="CARRO 37">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4dd0e1;" text="CARRO 36">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4fc3f7;" text="CARRO 35" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #d4e157;" text="CARRO 34">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #66bb6a;" text="CARRO 33">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffa726;" text="CARRO 32">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #2196f3;" text="CARRO 31" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffee58;" text="CARRO 50">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #d4e157;" text="CARRO 49">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #66bb6a;" text="CARRO 48">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffa726;" text="CARRO 47">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffee58;" text="CARRO 46">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #2196f3;" text="CARRO 45" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4dd0e1;" text="CARRO 44">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4fc3f7;" text="CARRO 43" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #66bb6a;" text="CARRO 42">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffa726;" text="CARRO 41">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #2196f3;" text="CARRO 60" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #673ab7;" text="CARRO 59" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4db6ac;" text="CARRO 58">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4fc3f7;" text="CARRO 57" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4dd0e1;" text="CARRO 56">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #3f51b5;" text="CARRO 55" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4db6ac;" text="CARRO 54">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #d4e157;" text="CARRO 53">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffa726;" text="CARRO 52">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #66bb6a;" text="CARRO 51">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #3f51b5;" text="CARRO 70" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4fc3f7;" text="CARRO 69" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #673ab7;" text="CARRO 68" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #d4e157;" text="CARRO 67">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #66bb6a;" text="CARRO 66">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffee58;" text="CARRO 65">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #673ab7;" text="CARRO 64" textFill="WHITE">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #4dd0e1;" text="CARRO 63">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #ffee58;" text="CARRO 62">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+                  <JFXButton prefHeight="75.0" prefWidth="90.0" style="-fx-background-color: #d4e157;" text="CARRO 61">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets top="15.0" />
+               </padding>
+            </TilePane>
+         </children>
+      </HBox>
+  </children>
+</VBox>
