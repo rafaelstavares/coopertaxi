@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -7,14 +9,17 @@
 <?import javafx.scene.control.SeparatorMenuItem?>
 <?import javafx.scene.control.ToolBar?>
 <?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #008B8B;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControlPrincipal">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControlPrincipal">
    <children>
-      <MenuBar style="-fx-background-color: gray;">
+      <MenuBar style="-fx-background-color: gray;" VBox.vgrow="ALWAYS">
          <menus>
             <Menu mnemonicParsing="false" text="_File">
                <items>
@@ -79,12 +84,12 @@
       </MenuBar>
       <ToolBar prefWidth="200.0" style="-fx-background-color: #20B2AA;" VBox.vgrow="ALWAYS">
         <items>
-            <Label fx:id="lOperador" alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: 364F6B;" textAlignment="CENTER">
+            <Label fx:id="lOperador" alignment="CENTER" contentDisplay="CENTER" textAlignment="CENTER" textFill="#6b6b6b">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
-            <Label fx:id="lData" alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: 364F6B;" textAlignment="CENTER">
+            <Label fx:id="lData" alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: 364F6B;" textAlignment="CENTER" textFill="#6b6b6b">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
@@ -93,13 +98,91 @@
                <children>
                   <HBox prefHeight="100.0" prefWidth="200.0" />
                </children></Pane>
-            <Label fx:id="lHora" alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: 364F6B;" textAlignment="CENTER">
+            <Label fx:id="lHora" alignment="CENTER" contentDisplay="CENTER" style="-fx-background-color: 364F6B;" textAlignment="CENTER" textFill="#6b6b6b">
                <font>
                   <Font name="System Bold" size="25.0" />
                </font>
             </Label>
         </items>
       </ToolBar>
-      <HBox prefHeight="100.0" prefWidth="200.0" style="-fx-background-color: #87CEFA;" VBox.vgrow="ALWAYS" />
+      <GridPane hgap="15.0" vgap="15.0" VBox.vgrow="ALWAYS">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <VBox fx:id="cardCotas" alignment="CENTER" style="-fx-background-color: #C0C0C0; -fx-background-radius: 10;" GridPane.hgrow="ALWAYS">
+               <children>
+                  <Label text="Valor Cotas">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font></Label>
+                  <Hyperlink text="R$27,50">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font></Hyperlink>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #C0C0C0; -fx-background-radius: 10;" GridPane.columnIndex="1">
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Cotas Pagas" textAlignment="CENTER" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font></Label>
+                  <Hyperlink text="20" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font></Hyperlink>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #C0C0C0; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS">
+               <children>
+                  <Label text="Cotas a Pagar">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font></Label>
+                  <Hyperlink text="40">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font></Hyperlink>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #C0C0C0; -fx-background-radius: 10;" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS">
+               <children>
+                  <Label text="Carro Oficina">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font></Label>
+                  <Hyperlink text="10">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font></Hyperlink>
+               </children>
+            </VBox>
+            <VBox alignment="CENTER" style="-fx-background-color: #C0C0C0; -fx-background-radius: 10;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Doentes">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font></Label>
+                  <Hyperlink text="8">
+                     <font>
+                        <Font name="System Bold" size="30.0" />
+                     </font></Hyperlink>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+         </padding>
+      </GridPane>
+      <Pane prefHeight="30.0" style="-fx-background-color: #FFD700;" />
    </children>
 </VBox>

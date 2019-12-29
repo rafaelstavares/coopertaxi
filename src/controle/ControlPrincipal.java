@@ -23,7 +23,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import modelo.Usuario;
@@ -44,7 +43,7 @@ public class ControlPrincipal implements Initializable {
     
     @FXML
     Label lHora;
-    
+        
     @FXML
     Label lData;
     
@@ -124,7 +123,7 @@ public class ControlPrincipal implements Initializable {
     
     @FXML
     void viewNomeUsuario() {
-        lOperador.setText(usuario12.getUserName());
+        lOperador.setText(usuario12.getUser().getSenha());
     }
     
     @FXML

@@ -11,6 +11,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -26,7 +27,8 @@ public class TabelaUser extends Application{
         Parent root = FXMLLoader.load(url);
         Scene oi = new Scene(root);
 
-        primaryStage.setScene(oi);
+        primaryStage.setScene(oi);     
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
         primaryStage.setTitle("Cadastro usuario");
         primaryStage.setAlwaysOnTop(true);
         primaryStage.show();

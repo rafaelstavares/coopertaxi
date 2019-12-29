@@ -33,8 +33,6 @@ public class ControleLogin implements Initializable {
             java.util.ResourceBundle resources) {
 
     }
-    
-
 
     @FXML
     JFXTextField usuario;
@@ -59,7 +57,10 @@ public class ControleLogin implements Initializable {
         try {
 
             if (user.buscarPorLogin(usuario.getText()) != null && senha.getText().equals(user.buscarPorLogin(usuario.getText()).getSenha())) {
-                UserSession.getInstace().setUser(new Usuario(usuario.getText()));
+                Usuario oi = new Usuario();
+                oi = user.buscarPorLogin(usuario.getText());
+
+                UserSession.getInstace().setUser(user.carregarId(oi.getIdUsuario()));
 
                 new Principal().start(new Stage());
                 stage.close();
