@@ -17,7 +17,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControlPrincipal">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: linear-gradient(to right, #373b44, #3d4d6d, #406098, #4173c5, #4286f4);;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controle.ControlPrincipal">
    <children>
       <MenuBar style="-fx-background-color: gray;" VBox.vgrow="ALWAYS">
          <menus>
@@ -118,7 +118,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <VBox fx:id="cardCotas" alignment="CENTER" style="-fx-background-color: #C0C0C0; -fx-background-radius: 10;" GridPane.hgrow="ALWAYS">
+            <VBox fx:id="cardCotas" alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.hgrow="ALWAYS">
                <children>
                   <Label text="Valor Cotas">
                      <font>
@@ -130,7 +130,7 @@
                      </font></Hyperlink>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #C0C0C0; -fx-background-radius: 10;" GridPane.columnIndex="1">
+            <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="1">
                <children>
                   <Label alignment="CENTER" contentDisplay="CENTER" text="Cotas Pagas" textAlignment="CENTER" VBox.vgrow="ALWAYS">
                      <font>
@@ -142,7 +142,7 @@
                      </font></Hyperlink>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #C0C0C0; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS">
+            <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="2" GridPane.hgrow="ALWAYS">
                <children>
                   <Label text="Cotas a Pagar">
                      <font>
@@ -154,7 +154,7 @@
                      </font></Hyperlink>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #C0C0C0; -fx-background-radius: 10;" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS">
+            <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.columnIndex="3" GridPane.hgrow="ALWAYS">
                <children>
                   <Label text="Carro Oficina">
                      <font>
@@ -166,7 +166,7 @@
                      </font></Hyperlink>
                </children>
             </VBox>
-            <VBox alignment="CENTER" style="-fx-background-color: #C0C0C0; -fx-background-radius: 10;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
+            <VBox alignment="CENTER" style="-fx-background-color: white; -fx-background-radius: 10;" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1">
                <children>
                   <Label text="Doentes">
                      <font>
@@ -183,6 +183,6 @@
             <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
          </padding>
       </GridPane>
-      <Pane prefHeight="30.0" style="-fx-background-color: #FFD700;" />
+      <Pane prefHeight="30.0" style="-fx-background-color: #F7971E;" />
    </children>
 </VBox>
