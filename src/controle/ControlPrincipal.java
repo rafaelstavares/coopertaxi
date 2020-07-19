@@ -128,7 +128,9 @@ public class ControlPrincipal implements Initializable {
     
     @FXML
     private void sairSistema() {
-        Platform.exit();
+        System.exit(0);
+
+                
     }
     
 }

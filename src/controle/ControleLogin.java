@@ -21,6 +21,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import modelo.Usuario;
+import org.hibernate.SessionFactory;
 
 /**
  *
@@ -49,6 +50,9 @@ public class ControleLogin implements Initializable {
     @FXML
     private Text actiontarget;
 
+    
+    
+  
     @FXML
     public void acao(ActionEvent event) {
         Stage stage = (Stage) entrar.getScene().getWindow();
@@ -57,12 +61,13 @@ public class ControleLogin implements Initializable {
         try {
 
             if (user.buscarPorLogin(usuario.getText()) != null && senha.getText().equals(user.buscarPorLogin(usuario.getText()).getSenha())) {
-                Usuario oi = new Usuario();
-                oi = user.buscarPorLogin(usuario.getText());
+                  
+             Usuario  oi = user.buscarPorLogin(usuario.getText());
 
-                UserSession.getInstace().setUser(user.carregarId(oi.getIdUsuario()));
+              UserSession.getInstace().setUser(user.carregarId(oi.getIdUsuario()));
 
                 new Principal().start(new Stage());
+                
                 stage.close();
             } else {
                 actiontarget.setText("credencias erradas");
@@ -72,7 +77,7 @@ public class ControleLogin implements Initializable {
                 limparLogin();
             }
         } catch (Exception e) {
-            System.out.println("in" + e);
+            System.out.println("tela login " + e);
         }
 
     }

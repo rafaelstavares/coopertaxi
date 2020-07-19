@@ -24,4 +24,8 @@ public class Carro {
     @Column(name = "idCarro")
     @GeneratedValue(strategy = GenerationType.AUTO)
     Integer idCarro;
+    
+    int numeroOrdem;
+    
+    
 }

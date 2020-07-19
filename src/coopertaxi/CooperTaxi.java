@@ -13,12 +13,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.hibernate.SessionFactory;
+import util.HibernateUtil;
 
 /**
  *
  * @author PC-ASUS
  */
 public class CooperTaxi extends Application {
+
+
 
     @Override
     public void start(Stage primaryStage) throws IOException {
@@ -30,7 +34,7 @@ public class CooperTaxi extends Application {
         primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.setTitle("Inicio");
         primaryStage.show();
-        
+
 
     }
 
