@@ -8,34 +8,34 @@ package coopertaxi;
 import java.io.IOException;
 import java.net.URL;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.stage.Modality;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
  *
- * @author PC-ASUS
+ * @author Isadora
  */
-public class PUsuario extends Application{
-    
-    
-     @Override
-    public void start(Stage primaryStage) throws IOException {
-        URL url = getClass().getResource("/view/cad-user.fxml");
-        Parent root = FXMLLoader.load(url);
-        Scene oi = new Scene(root);
+public class CadCarro extends Application {
 
-        primaryStage.setScene(oi);
-        primaryStage.initModality(Modality.APPLICATION_MODAL);
-        primaryStage.setTitle("cadatro usuario");
-        primaryStage.setAlwaysOnTop(true);
+    @Override
+    public void start(Stage primaryStage) throws IOException {
+        URL url = getClass().getResource("/view/cadCarro.fxml");
+        Parent root = FXMLLoader.load(url);
+
+        Scene scene = new Scene(root);
+
+        primaryStage.setTitle("Cadastro Carro");
+        primaryStage.setScene(scene);
         primaryStage.show();
-         oi.setOnKeyPressed(new EventHandler<KeyEvent>() {
+        scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
             if (event.getCode() == KeyCode.ESCAPE) {
@@ -44,11 +44,12 @@ public class PUsuario extends Application{
             }
         });
     }
-    
-    
-    
-     public static void main(String[] args) {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
         launch(args);
     }
-    
+
 }

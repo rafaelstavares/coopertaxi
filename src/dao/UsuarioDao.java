@@ -120,6 +120,9 @@ public class UsuarioDao {
                 list.add(ent);
 
             }
+             
+            System.out.println("-------List de usuario---------");
+
            
         } catch (Exception e) {
             if (trasacao != null) {

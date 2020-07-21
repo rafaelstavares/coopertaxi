@@ -5,7 +5,9 @@
  */
 package controle;
 
+import coopertaxi.CadCarro;
 import coopertaxi.PUsuario;
+import coopertaxi.PagCota;
 import coopertaxi.TabelaUser;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -14,7 +16,6 @@ import java.util.Date;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -32,49 +33,53 @@ import modelo.Usuario;
  * @author PC-ASUS
  */
 public class ControlPrincipal implements Initializable {
-    
+
     UserSession usuario12;
-    
+
     @FXML
     MenuItem fechar;
-    
+
     @FXML
     MenuItem idCadUser;
-    
+
+    @FXML
+    MenuItem idCadCota;
+
+    @FXML
+    MenuItem idCadCarro;
+
     @FXML
     Label lHora;
-        
+
     @FXML
     Label lData;
-    
+
     @FXML
     Label lOperador;
-    
+
     @FXML
     BorderPane panel1;
-    
+
     @Override
     public void initialize(java.net.URL location,
             java.util.ResourceBundle resources) {
         idCadUser.setAccelerator(
                 KeyCombination.keyCombination("SHORTCUT+U")
         );
+
+        idCadCota.setAccelerator(
+                KeyCombination.keyCombination("SHORTCUT+C")
+        );
+        idCadCarro.setAccelerator(
+                KeyCombination.keyCombination("SHORTCUT+M")
+        );
+
         bindToTime();
         labelData();
-        Usuario user13 =  UserSession.getInstace().getUser();
+        Usuario user13 = UserSession.getInstace().getUser();
         lOperador.setText(user13.getNome());
     }
-    
-    @FXML
-    void cadusuario(ActionEvent event) {
-        try {
-            new PUsuario().start(new Stage());
-            
-        } catch (Exception e) {
-            System.out.println("" + e);
-        }
-    }
-    
+
     private void bindToTime() {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(0),
@@ -92,7 +97,7 @@ public class ControlPrincipal implements Initializable {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
-    
+
     private void labelData() {
         Timeline timeline = new Timeline(
                 new KeyFrame(Duration.seconds(0),
@@ -111,7 +116,7 @@ public class ControlPrincipal implements Initializable {
         timeline.setCycleCount(Animation.INDEFINITE);
         timeline.play();
     }
-    
+
     @FXML
     void viewUsuario(ActionEvent event) {
         try {
@@ -120,17 +125,45 @@ public class ControlPrincipal implements Initializable {
             System.out.println("" + e);
         }
     }
-    
+
+    @FXML
+    void cadCota(ActionEvent event) {
+        try {
+            new PagCota().start(new Stage());
+        } catch (Exception e) {
+            System.out.println("" + e);
+        }
+    }
+
+    @FXML
+    void cadCarro(ActionEvent event) {
+        try {
+            new CadCarro().start(new Stage());
+
+        } catch (Exception e) {
+            System.out.println("" + e);
+        }
+    }
+
+    @FXML
+    void cadusuario(ActionEvent event) {
+        try {
+            new PUsuario().start(new Stage());
+
+        } catch (Exception e) {
+            System.out.println("" + e);
+        }
+    }
+
     @FXML
     void viewNomeUsuario() {
         lOperador.setText(usuario12.getUser().getSenha());
     }
-    
+
     @FXML
     private void sairSistema() {
         System.exit(0);
 
-                
     }
-    
+
 }

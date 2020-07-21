@@ -108,6 +108,7 @@ public class ControleLogin implements Initializable {
         //Obtendo a janela atual
         System.out.println("saindo");
         stage.close(); //Fechando o Stage
+        System.exit(0);
     }
 
 }
