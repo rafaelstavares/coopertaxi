@@ -12,6 +12,7 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Modality;
@@ -40,6 +41,11 @@ public class PUsuario extends Application{
             public void handle(KeyEvent event) {
             if (event.getCode() == KeyCode.ESCAPE) {
                    primaryStage.close();
+                }
+            if (event.getCode() == KeyCode.ENTER) {
+                    Button teste1 = (Button) root.lookup("#enviarBtn");
+                    teste1.fire();
+                    event.consume();
                 }
             }
         });

@@ -24,7 +24,7 @@ public class CarroDao {
 
     public void Salvar(Carro carro) {
         Session sessao = sessFact.getCurrentSession();
-        Transaction trasacao = sessao.beginTransaction();;
+        Transaction trasacao = sessao.beginTransaction();
         try {
 
             sessao.save(carro);
@@ -39,7 +39,23 @@ public class CarroDao {
         }
 
     }
+ public void deletar(Carro usuario) {
+        Session sessao = sessFact.getCurrentSession();
+        Transaction trasacao = sessao.beginTransaction();;
+        try {
 
+            sessao.delete(usuario);
+            trasacao.commit();
+         
+        } catch (RuntimeException ex) {
+            if (trasacao != null) {
+                trasacao.rollback();
+            }
+        } finally {
+            sessao.close();
+        }
+
+    }
     public ObservableList<Carro> listarCarro() {
         Session sessao = sessFact.getCurrentSession();
         Transaction trasacao = null;
@@ -53,7 +69,7 @@ public class CarroDao {
 
             }
 
-            System.out.println("-------List de usuario---------");
+            System.out.println("-------List de Carro---------");
 
         } catch (Exception e) {
             if (trasacao != null) {
@@ -69,12 +85,12 @@ public class CarroDao {
     public Carro carregarId(Integer idCarro) {
         Session sessao = sessFact.openSession();
         Transaction trasacao = sessao.beginTransaction();
-Carro car = new Carro();
+        Carro car = new Carro();
         try {
             car = (Carro) sessao.get(Carro.class, idCarro);
             trasacao.commit();
             System.out.println("-------carregando carro por id---------");
-        }catch (RuntimeException ex) {
+        } catch (RuntimeException ex) {
             if (trasacao != null) {
                 trasacao.rollback();
             }
@@ -82,8 +98,8 @@ Carro car = new Carro();
             if (sessao != null) {
                 sessao.close();
             }
-            
-    }
+
+        }
         return car;
-}
+    }
 }

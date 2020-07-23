@@ -8,6 +8,7 @@ package controle;
 import coopertaxi.CadCarro;
 import coopertaxi.PUsuario;
 import coopertaxi.PagCota;
+import coopertaxi.TabelaCarro;
 import coopertaxi.TabelaUser;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -20,6 +21,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuItem;
 import javafx.scene.input.KeyCombination;
@@ -49,6 +51,9 @@ public class ControlPrincipal implements Initializable {
     MenuItem idCadCarro;
 
     @FXML
+    MenuItem idListarCarro;
+    
+    @FXML
     Label lHora;
 
     @FXML
@@ -59,6 +64,9 @@ public class ControlPrincipal implements Initializable {
 
     @FXML
     BorderPane panel1;
+    
+    @FXML
+    Hyperlink linkCarros;
 
     @Override
     public void initialize(java.net.URL location,
@@ -125,6 +133,14 @@ public class ControlPrincipal implements Initializable {
             System.out.println("" + e);
         }
     }
+    @FXML
+    void abrirLink(ActionEvent event) {
+        try {
+            new TabelaCarro().start(new Stage());
+        } catch (Exception e) {
+            System.out.println("" + e);
+        }
+    }
 
     @FXML
     void cadCota(ActionEvent event) {
@@ -145,6 +161,16 @@ public class ControlPrincipal implements Initializable {
         }
     }
 
+     @FXML
+    void listarCarro(ActionEvent event) {
+        try {
+            new TabelaCarro().start(new Stage());
+
+        } catch (Exception e) {
+            System.out.println("" + e);
+        }
+    }
+    
     @FXML
     void cadusuario(ActionEvent event) {
         try {

@@ -8,7 +8,6 @@ package coopertaxi;
 import java.io.IOException;
 import java.net.URL;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -16,7 +15,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 /**
@@ -38,8 +36,13 @@ public class CadCarro extends Application {
         scene.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent event) {
-            if (event.getCode() == KeyCode.ESCAPE) {
-                   primaryStage.close();
+                if (event.getCode() == KeyCode.ESCAPE) {
+                    primaryStage.close();
+                }
+                if (event.getCode() == KeyCode.ENTER) {
+                    Button teste1 = (Button) root.lookup("#enviarBtn");
+                    teste1.fire();
+                    event.consume();
                 }
             }
         });

@@ -7,7 +7,6 @@ package modelo;
 
 import java.io.Serializable;
 import java.util.Objects;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,18 +22,10 @@ import javax.persistence.Table;
 public class Carro implements Serializable {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     Integer idCarro;
-    
+
     int numeroOrdem;
-
-    public Carro(Integer idCarro, int numeroOrdem) {
-        this.idCarro = idCarro;
-        this.numeroOrdem = numeroOrdem;
-    }
-
-    public Carro() {
-    }
 
     public Integer getIdCarro() {
         return idCarro;
@@ -54,9 +45,9 @@ public class Carro implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 5;
-        hash = 83 * hash + Objects.hashCode(this.idCarro);
-        hash = 83 * hash + this.numeroOrdem;
+        int hash = 3;
+        hash = 97 * hash + Objects.hashCode(this.idCarro);
+        hash = 97 * hash + this.numeroOrdem;
         return hash;
     }
 
@@ -81,10 +72,13 @@ public class Carro implements Serializable {
         return true;
     }
 
+
+ 
+    
+
     @Override
     public String toString() {
         return "Carro " + numeroOrdem + "\n";
     }
-    
-    
+
 }

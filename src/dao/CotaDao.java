@@ -5,6 +5,11 @@
  */
 package dao;
 
+import static dao.CarroDao.sessFact;
+import java.util.List;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import modelo.Carro;
 import modelo.Cota;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -38,5 +43,30 @@ public class CotaDao {
 
     } 
      
-     
+  public List<Carro> listarCotas() {
+        Session sessao = sessFact.getCurrentSession();
+        Transaction trasacao = null;
+        trasacao = sessao.beginTransaction();
+        List<Carro> list = FXCollections.observableArrayList();
+        try {
+
+            List<Carro> eList = sessao.createCriteria(Carro.class).list();
+            for (Carro ent : eList) {
+                list.add(ent);
+
+            }
+
+            System.out.println("-------List de Cotas---------");
+
+        } catch (Exception e) {
+            if (trasacao != null) {
+                trasacao.rollback();
+            }
+        } finally {
+            sessao.close();
+        }
+
+        return list;
+    }
+   
 }

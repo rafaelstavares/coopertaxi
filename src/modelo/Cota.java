@@ -9,9 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,6 +18,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 
 /**
  *
@@ -50,7 +50,8 @@ public class Cota implements Serializable {
     @Temporal(TemporalType.DATE)
     Date dataCota;
     
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity=modelo.Carro.class)
+    @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "carro_idcarro", nullable = true)
     Carro carro;
 
@@ -88,11 +89,11 @@ public class Cota implements Serializable {
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 29 * hash + Objects.hashCode(this.idCota);
-        hash = 29 * hash + Float.floatToIntBits(this.valorCota);
-        hash = 29 * hash + Objects.hashCode(this.dataCota);
-        hash = 29 * hash + Objects.hashCode(this.carro);
+        int hash = 5;
+        hash = 73 * hash + Objects.hashCode(this.idCota);
+        hash = 73 * hash + Float.floatToIntBits(this.valorCota);
+        hash = 73 * hash + Objects.hashCode(this.dataCota);
+        hash = 73 * hash + Objects.hashCode(this.carro);
         return hash;
     }
 
@@ -122,5 +123,6 @@ public class Cota implements Serializable {
         }
         return true;
     }
-    
+
+   
 }

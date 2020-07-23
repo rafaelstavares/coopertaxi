@@ -48,13 +48,13 @@ public class UsuarioDao {
 
             sessao.delete(usuario);
             trasacao.commit();
-            sessFact.close();
+         
         } catch (RuntimeException ex) {
             if (trasacao != null) {
                 trasacao.rollback();
             }
         } finally {
-            sessFact.close();
+            sessao.close();
         }
 
     }

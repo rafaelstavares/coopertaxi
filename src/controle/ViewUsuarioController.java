@@ -45,7 +45,7 @@ public class ViewUsuarioController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         configurarColunas();
         atualizarTabela();
-        deleteBtn.toFront();
+
     }
 
     @FXML
