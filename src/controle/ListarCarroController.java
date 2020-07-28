@@ -5,7 +5,6 @@
  */
 package controle;
 
-import static com.mchange.v2.c3p0.impl.C3P0Defaults.user;
 import dao.CarroDao;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -55,7 +54,7 @@ public class ListarCarroController implements Initializable {
             
             ObservableList<Carro> usuarioSelecionado, allUsuario;
             allUsuario = tabelaCar.getItems();
-            oi = car.carregarId(tabelaCar.getSelectionModel().getSelectedItem().getIdCarro());
+            oi = car.carregarIdCarro(tabelaCar.getSelectionModel().getSelectedItem().getIdCarro());
             usuarioSelecionado = tabelaCar.getSelectionModel().getSelectedItems();
             usuarioSelecionado.forEach(allUsuario::remove);
             

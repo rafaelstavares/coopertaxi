@@ -39,14 +39,15 @@ public class CarroDao {
         }
 
     }
- public void deletar(Carro usuario) {
+
+    public void deletar(Carro usuario) {
         Session sessao = sessFact.getCurrentSession();
         Transaction trasacao = sessao.beginTransaction();;
         try {
 
             sessao.delete(usuario);
             trasacao.commit();
-         
+
         } catch (RuntimeException ex) {
             if (trasacao != null) {
                 trasacao.rollback();
@@ -56,6 +57,7 @@ public class CarroDao {
         }
 
     }
+
     public ObservableList<Carro> listarCarro() {
         Session sessao = sessFact.getCurrentSession();
         Transaction trasacao = null;
@@ -82,14 +84,40 @@ public class CarroDao {
         return list;
     }
 
-    public Carro carregarId(Integer idCarro) {
+    public List<Carro> listarCarroAllList() {
+        Session sessao = sessFact.getCurrentSession();
+        Transaction trasacao = null;
+        trasacao = sessao.beginTransaction();
+        ObservableList<Carro> list = FXCollections.observableArrayList();
+        try {
+
+            List<Carro> eList = sessao.createCriteria(Carro.class).list();
+            for (Carro ent : eList) {
+                list.add(ent);
+
+            }
+
+            System.out.println("-------Lista de todos os carros por l---------");
+
+        } catch (Exception e) {
+            if (trasacao != null) {
+                trasacao.rollback();
+            }
+        } finally {
+            sessao.close();
+        }
+
+        return list;
+    }
+
+    public Carro carregarIdCarro(Integer idCarro) {
         Session sessao = sessFact.openSession();
         Transaction trasacao = sessao.beginTransaction();
         Carro car = new Carro();
         try {
             car = (Carro) sessao.get(Carro.class, idCarro);
             trasacao.commit();
-            System.out.println("-------carregando carro por id---------");
+            System.out.println("-------carregando carros por list--------");
         } catch (RuntimeException ex) {
             if (trasacao != null) {
                 trasacao.rollback();

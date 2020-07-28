@@ -37,6 +37,7 @@ public class Cota implements Serializable {
     }
 
     public Cota() {
+
     }
 
     

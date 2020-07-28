@@ -56,6 +56,57 @@ public class CotaDao {
 
             }
 
+            System.out.println("-------List de carros com Cotas---------");
+
+        } catch (Exception e) {
+            if (trasacao != null) {
+                trasacao.rollback();
+            }
+        } finally {
+            sessao.close();
+        }
+
+        return list;
+    }
+  public ObservableList<Cota> listarCotasData() {
+        Session sessao = sessFact.getCurrentSession();
+        Transaction trasacao = null;
+        trasacao = sessao.beginTransaction();
+        ObservableList<Cota> list = FXCollections.observableArrayList();
+        try {
+
+            List<Cota> eList = sessao.createCriteria(Cota.class).list();
+            for (Cota ent : eList) {
+                list.add(ent);
+
+            }
+
+            System.out.println("-------List de Cotas e datas---------");
+
+        } catch (Exception e) {
+            if (trasacao != null) {
+                trasacao.rollback();
+            }
+        } finally {
+            sessao.close();
+        }
+
+        return list;
+    }
+  
+  public List<Cota> allListarCotas() {
+        Session sessao = sessFact.getCurrentSession();
+        Transaction trasacao = null;
+        trasacao = sessao.beginTransaction();
+        ObservableList<Cota> list = FXCollections.observableArrayList();
+        try {
+
+            List<Cota> eList = sessao.createCriteria(Cota.class).list();
+            for (Cota ent : eList) {
+                list.add(ent);
+
+            }
+
             System.out.println("-------List de Cotas---------");
 
         } catch (Exception e) {

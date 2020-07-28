@@ -9,11 +9,15 @@ import coopertaxi.CadCarro;
 import coopertaxi.PUsuario;
 import coopertaxi.PagCota;
 import coopertaxi.TabelaCarro;
+import coopertaxi.TabelaCota;
 import coopertaxi.TabelaUser;
+import dao.CarroDao;
+import dao.CotaDao;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -28,6 +32,8 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+import modelo.Carro;
+import modelo.Cota;
 import modelo.Usuario;
 
 /**
@@ -52,7 +58,10 @@ public class ControlPrincipal implements Initializable {
 
     @FXML
     MenuItem idListarCarro;
-    
+
+    @FXML
+    MenuItem idListarCotasdata;
+
     @FXML
     Label lHora;
 
@@ -64,7 +73,7 @@ public class ControlPrincipal implements Initializable {
 
     @FXML
     BorderPane panel1;
-    
+
     @FXML
     Hyperlink linkCarros;
 
@@ -86,6 +95,8 @@ public class ControlPrincipal implements Initializable {
         labelData();
         Usuario user13 = UserSession.getInstace().getUser();
         lOperador.setText(user13.getNome());
+    
+
     }
 
     private void bindToTime() {
@@ -133,6 +144,7 @@ public class ControlPrincipal implements Initializable {
             System.out.println("" + e);
         }
     }
+
     @FXML
     void abrirLink(ActionEvent event) {
         try {
@@ -161,7 +173,17 @@ public class ControlPrincipal implements Initializable {
         }
     }
 
-     @FXML
+    @FXML
+    void listarCotasData(ActionEvent event) {
+        try {
+            new TabelaCota().start(new Stage());
+
+        } catch (Exception e) {
+            System.out.println("" + e);
+        }
+    }
+
+    @FXML
     void listarCarro(ActionEvent event) {
         try {
             new TabelaCarro().start(new Stage());
@@ -170,7 +192,7 @@ public class ControlPrincipal implements Initializable {
             System.out.println("" + e);
         }
     }
-    
+
     @FXML
     void cadusuario(ActionEvent event) {
         try {
@@ -192,4 +214,5 @@ public class ControlPrincipal implements Initializable {
 
     }
 
+    
 }

@@ -40,7 +40,7 @@
             <Menu mnemonicParsing="false" text="_Cota">
                <items>
                   <MenuItem fx:id="idCadCota" mnemonicParsing="false" onAction="#cadCota" text="Cadastrar" />
-                  <MenuItem mnemonicParsing="false" text="Listar" />
+                  <MenuItem fx:id="idListarCotasdata" mnemonicParsing="false" onAction="#listarCotasData" text="Listar" />
                   <SeparatorMenuItem mnemonicParsing="false" />
                   <Menu mnemonicParsing="false" text="_Carro Oficina">
                      <items>

@@ -84,7 +84,7 @@ public class CotaController implements Initializable {
             cota.setDataCota(datacerta);
             cota.setValorCota(Float.parseFloat(valorCota.getText()));
             Carro car4 = (Carro) comboBox.getValue();
-            cota.setCarro(carro.carregarId(car4.getIdCarro()));
+            cota.setCarro(carro.carregarIdCarro(car4.getIdCarro()));
             gravarCota.SalvarCota(cota);
         } catch (Exception e) {
             System.out.println("erro " + e);
