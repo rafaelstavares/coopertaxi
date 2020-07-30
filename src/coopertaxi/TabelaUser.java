@@ -8,15 +8,13 @@ package coopertaxi;
 import java.io.IOException;
 import java.net.URL;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 /**
@@ -34,6 +32,8 @@ public class TabelaUser extends Application {
 
         primaryStage.setTitle("Listar Usuarios!");
         primaryStage.setScene(scene);
+        primaryStage.initModality(Modality.APPLICATION_MODAL);
+        primaryStage.setMaximized(true);
         primaryStage.show();
 
         scene.setOnKeyReleased(new EventHandler<KeyEvent>() {

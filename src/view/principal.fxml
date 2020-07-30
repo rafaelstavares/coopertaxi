@@ -39,19 +39,11 @@
             </Menu>
             <Menu mnemonicParsing="false" text="_Cota">
                <items>
-                  <MenuItem fx:id="idCadCota" mnemonicParsing="false" onAction="#cadCota" text="Cadastrar" />
-                  <MenuItem fx:id="idListarCotasdata" mnemonicParsing="false" onAction="#listarCotasData" text="Listar" />
-                  <SeparatorMenuItem mnemonicParsing="false" />
-                  <Menu mnemonicParsing="false" text="_Carro Oficina">
+                  <MenuItem mnemonicParsing="false" text="Pagar Cota Dia" />
+                  <Menu mnemonicParsing="false" text="_Cadastro Cota">
                      <items>
-                        <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
-                        <MenuItem mnemonicParsing="false" text="Listar" />
-                     </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="_Doente">
-                     <items>
-                        <MenuItem mnemonicParsing="false" onAction="#cadusuario" text="Cadastrar" />
-                        <MenuItem mnemonicParsing="false" text="Listar" />
+                        <MenuItem fx:id="idCadCota" mnemonicParsing="false" onAction="#cadCota" text="Cadastrar" />
+                        <MenuItem fx:id="idListarCotasdata" mnemonicParsing="false" onAction="#listarCotasData" text="Listar" />
                      </items>
                   </Menu>
                </items>
