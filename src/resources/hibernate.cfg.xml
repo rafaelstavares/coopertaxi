@@ -3,12 +3,12 @@
 <hibernate-configuration>
     <session-factory>
         
-   <!-- configuração do banco de bandos embedded h2-->     
+<!--    configuração do banco de bandos embedded h2     -->
         
         
-<!--        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
+        <property name="dialect">org.hibernate.dialect.H2Dialect</property>
      <property name="hibernate.connection.driver_class">org.h2.Driver</property>
-        <property name="hibernate.connection.url">jdbc:h2:./db/db</property>
+        <property name="hibernate.connection.url">jdbc:h2:./db</property>
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password">root</property>
         <property name="hibernate.c3p0.min_size">3</property>
@@ -17,31 +17,12 @@
         <property name="hibernate.c3p0.max_statements">50</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.format_sql">false</property>
-       <property name="hbm2ddl.auto">update</property>-->
+       <property name="hbm2ddl.auto">update</property>
         
         
         
-        
-        
-       <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-    <!--<property name="connection.url">jdbc:mysql://72.55.172.230:3306/cooperta_coopertaxi?serverTimezone=UTC</property>
-    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="connection.username">cooperta_taxi2</property>
-    <property name="connection.password">C00per@tiv@</property>-->
-    
-     <property name="connection.url">jdbc:mysql://localhost:3306/coopertaxi?serverTimezone=UTC</property>
-    <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
-    <property name="connection.username">root</property>
-    <property name="connection.password">root</property>
-    
-    
-    <property name="connection.pool_size">3</property>
-    <!--property name="dialect">org.hibernate.dialect.MySQLDialect</property-->
-    <property name="current_session_context_class">thread</property>
-    <property name="show_sql">true</property>
-    <property name="format_sql">true</property>
-    <property name="hbm2ddl.auto">update</property>
-        <!-- Livro -->
+          
+        <!-- Coopertaxi -->
         <mapping class="modelo.Usuario" />
         <mapping class="modelo.Carro" />
         <mapping class="modelo.CarroOficina" />
